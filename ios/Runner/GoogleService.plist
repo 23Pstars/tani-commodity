@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>14924203052-bbukiff4hoa3pev3vmn9si29chg3l24e.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.14924203052-bbukiff4hoa3pev3vmn9si29chg3l24e</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBRDNuhCmXFd6V6No8gzGODwqauixklixM</string>
+	<key>GCM_SENDER_ID</key>
+	<string>14924203052</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>tc.hackfest.flutter</string>
+	<key>PROJECT_ID</key>
+	<string>tani-commodity</string>
+	<key>STORAGE_BUCKET</key>
+	<string>tani-commodity.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:14924203052:ios:b678e2f4bb48e306</string>
+	<key>DATABASE_URL</key>
+	<string>https://tani-commodity.firebaseio.com</string>
+</dict>
+</plist>
