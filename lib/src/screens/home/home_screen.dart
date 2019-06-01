@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tani_commodity/src/reusable/leftdrawer.dart';
-import 'package:tani_commodity/src/reusable/appbar.dart';
+import 'package:tani_commodity/src/widgets/leftdrawer.dart';
+import 'package:tani_commodity/src/widgets/appbar.dart';
 
 class HomeScreen extends StatefulWidget{
   @override
