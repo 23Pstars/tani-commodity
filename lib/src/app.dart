@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tani_commodity/src/screens/home/home_screen.dart';
 import 'package:tani_commodity/src/screens/login/login_screen.dart';
+import 'package:tani_commodity/src/screens/register/register_screen.dart';
 
 class App extends StatefulWidget {
   @override
@@ -28,12 +29,16 @@ class _AppState extends State<App> {
             fontSize: 12,
             color: Color(0x80777777),
           ),
-          
+          border: new OutlineInputBorder(
+            borderRadius: new BorderRadius.circular(25.0),
+            borderSide: new BorderSide(
+            ),
+          ),
         ),
       ),
       initialRoute: '/',
       routes: <String, WidgetBuilder>{
-        '/': (context) => HomeScreen(),
+        '/': (context) => LoginScreen(),
         '/home': (context) => HomeScreen()
       },
     );

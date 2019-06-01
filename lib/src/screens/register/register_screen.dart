@@ -1,18 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:tani_commodity/src/utils/auth_util.dart';
 
-class LoginScreen extends StatefulWidget {
+class RegisterScreen extends StatefulWidget {
   @override
-  _LoginScreenState createState() => _LoginScreenState();
+  _RegisterScreenState createState() => _RegisterScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
-  String _email, _password;
-  String _isError, _isLoading;
-
+class _RegisterScreenState extends State<RegisterScreen> {
+  String _email, _password, _name;
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-  final BaseAuth auth = Auth();
 
   @override
   Widget build(BuildContext context) {
@@ -25,15 +21,29 @@ class _LoginScreenState extends State<LoginScreen> {
         Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-          FlutterLogo(
-            size: 100.0,
-          ),
+          // FlutterLogo(
+          //   size: 100.0,
+          // ),
           Form(
                 key: _formKey,
                 child: Padding(
                   padding: const EdgeInsets.all(20.0),
                   child: Column(
                     children: <Widget>[
+                      TextFormField(
+                        decoration: InputDecoration(
+                          hintText: "Enter Your Name"
+                        ),
+                        keyboardType: TextInputType.text,
+                        obscureText: true,
+                        validator: (input) {
+                          if(input.isEmpty) {
+                            return "Name is required!";
+                          }
+                        },
+                        onSaved: (input) => _name = input,
+                      ),
+                      Padding(padding: const EdgeInsets.only(top: 10.0)),
                       TextFormField(
                         decoration: InputDecoration(
                             hintText: "Enter Your Email",
@@ -62,6 +72,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         },
                         onSaved: (input) => _password = input,
                       ),
+                      
                       Padding(padding: const EdgeInsets.only(top: 60.0)),
                       MaterialButton(
                         height: 50.0,
@@ -75,7 +86,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           if (formState.validate()) {
                             formState.save();
                             try {
-                              String userId = await auth.signIn(_email, _password);
+                              FirebaseUser user = await FirebaseAuth.instance.signInWithEmailAndPassword(email: _email, password: _password);
                               Navigator.of(context).pushNamed('/home');
                             } catch (e) {}
                           }
