@@ -15,7 +15,7 @@ class _AppState extends State<App> {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         // Write all theme styles here
-        primaryColor: Color(0xff086eba),
+        primaryColor: Color(0xff31A05E),
         accentColor: Color(0xffffc502),
         backgroundColor: Color(0xfff6f6f9),
         buttonTheme: ButtonThemeData(
