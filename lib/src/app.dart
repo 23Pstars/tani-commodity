@@ -48,7 +48,7 @@ class _AppState extends State<App> {
       ),
       initialRoute: '/',
       routes: <String, WidgetBuilder>{
-        '/': (context) => RegisterScreen(),
+        '/': (context) => HomeScreen(),
         '/register': (context) => RegisterScreen(),
         '/home': (context) => HomeScreen()
       },

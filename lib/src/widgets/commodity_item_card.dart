@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tani_commodity/src/screens/commodity/commodity_screen.dart';
 
 class CommodityItemCard extends StatelessWidget {
   final double _borderRadius = 10;
@@ -21,8 +22,9 @@ class CommodityItemCard extends StatelessWidget {
         ),
         child: InkWell(
             onTap: () {
-              print('Commodity Item Tapped');
-              onPressed();
+              Navigator.push(context,
+                MaterialPageRoute(builder: (context) => CommodityScreen()
+              ));
             },
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -73,7 +75,9 @@ class CommodityItemCard extends StatelessWidget {
                       color: Theme.of(context).primaryColor,
                       child: Text("Review"),
                       onPressed: () {
-                        onPressed != null && onPressed();
+                        Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => CommodityScreen()
+                        ));
                       },
                     ),
                   ),
