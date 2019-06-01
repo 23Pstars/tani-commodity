@@ -126,6 +126,18 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             } catch (e) {}
                           }
                         },
+                      ),
+                      Padding(padding: const EdgeInsets.only(top: 10.0)),
+                      MaterialButton(
+                        height: 50.0,
+                        minWidth: 200.0,
+                        color: Colors.green,
+                        splashColor: Colors.teal,
+                        textColor: Colors.white,
+                        child: Text("Login"),
+                        onPressed: () {
+                          Navigator.of(context).pushNamed('/login');
+                        },
                       )
                     ],
                   ),

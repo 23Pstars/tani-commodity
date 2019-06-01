@@ -81,7 +81,19 @@ class _LoginScreenState extends State<LoginScreen> {
                           } catch (e) {}
                         }
                       },
-                    )
+                    ),
+                    Padding(padding: const EdgeInsets.only(top: 10.0)),
+                      MaterialButton(
+                        height: 50.0,
+                        minWidth: 200.0,
+                        color: Colors.green,
+                        splashColor: Colors.teal,
+                        textColor: Colors.white,
+                        child: Text("Regiser"),
+                        onPressed: () {
+                          Navigator.of(context).pushNamed('/register');
+                        },
+                      )
                   ],
                 ),
               ),
