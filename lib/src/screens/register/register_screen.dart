@@ -23,7 +23,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
       body: Stack(
       children: <Widget> [
         BackgroundCurve(),
-        Column(
+        ListView(children: <Widget>[
+          SizedBox(height: 40,),
+          Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
           // FlutterLogo(
@@ -120,7 +122,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             formState.save();
                             try {
                               String userUid = await auth.signUp(_email, _password, _name, _address);
-
+                              Navigator.of(context).pushNamed('/login');
                             } catch (e) {}
                           }
                         },
@@ -131,7 +133,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
               )
             ],
           ),
-        ]
+        ],)
+        ],
       ),
     );
   }
