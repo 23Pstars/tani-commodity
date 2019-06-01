@@ -14,6 +14,7 @@ class VillageItemCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
     return Stack(overflow: Overflow.visible, children: <Widget>[
       Card(
         shape: RoundedRectangleBorder(
@@ -21,16 +22,16 @@ class VillageItemCard extends StatelessWidget {
         ),
         child: ClipRRect(
           borderRadius: new BorderRadius.circular(_cardRadius),
-          child: Image.network(
+          child: Image.asset(
             image,
-            width: double.infinity,
-            height: 120,
+            width: width - 40,
+            height: 180,
             fit: BoxFit.cover,
           ),
         ),
       ),
       Positioned(
-        bottom: -50,
+        bottom: 20,
         left: 20,
         right: 20,
         child: Card(

@@ -8,7 +8,7 @@ import 'package:tani_commodity/src/screens/home/village_item_scroll.dart';
 
 import 'package:firebase_database/firebase_database.dart';
 
-class HomeScreen extends StatefulWidget{
+class HomeScreen extends StatefulWidget {
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
@@ -21,13 +21,14 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     category = [
-      ['Hasil Bumi', 'https://web.pesansayur.id/asset/upload/icons_pilihan.png'],
-      ['Olahan', 'https://web.pesansayur.id/asset/upload/icons_pilihan.png'],
-      ['Kerajinan', 'https://web.pesansayur.id/asset/upload/icons_pilihan.png'],
-      ['Jasa', 'https://web.pesansayur.id/asset/upload/icons_pilihan.png']
+      ['Hasil Bumi', 'assets/images/icon_hasil_bumi.png'],
+      ['Olahan', 'assets/images/icon_olahan.png'],
+      ['Kerajinan', 'assets/images/icon_kerajinan.png'],
+      ['Jasa', 'assets/images/icon_jasa.png']
     ];
     village = [
-      ['Kekeri', 'https://upload.wikimedia.org/wikipedia/commons/9/90/Tassira.village.jpg'],
+      ['Kekeri', 'assets/images/kekeri.jpg'],
+      ['Kota Mataram', 'assets/images/mataram.jpg']
     ];
     commodity = [
       ['Jagung'],
@@ -47,7 +48,10 @@ class _HomeScreenState extends State<HomeScreen> {
         color: Colors.white,
         child: CustomScrollView(
           slivers: <Widget>[
-            TCAppBar(title: 'Homescreen',withBackground: false,),
+            TCAppBar(
+              title: 'Tani Commodity',
+              withBackground: false,
+            ),
             SliverToBoxAdapter(
               child: Padding(
                 padding: EdgeInsets.all(0),
