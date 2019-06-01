@@ -20,7 +20,8 @@ class _AppState extends State<App> {
         accentColor: Color(0xffffc502),
         backgroundColor: Color(0xfff6f6f9),
         buttonTheme: ButtonThemeData(
-          shape: RoundedRectangleBorder(borderRadius:BorderRadius.circular(30.0)),
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
           buttonColor: Color(0xff086eba),
           textTheme: ButtonTextTheme.primary,
         ),
@@ -35,6 +36,14 @@ class _AppState extends State<App> {
             ),
           ),
         ),
+        textTheme: TextTheme(
+            body1: TextStyle(
+              fontSize: 12,
+            ),
+            subtitle: TextStyle(
+              fontSize: 12,
+              fontWeight: FontWeight.w700,
+            )),
       ),
       initialRoute: '/',
       routes: <String, WidgetBuilder>{
