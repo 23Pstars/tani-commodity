@@ -31,9 +31,8 @@ class _AppState extends State<App> {
             color: Color(0x80777777),
           ),
           border: new OutlineInputBorder(
-            borderRadius: new BorderRadius.circular(25.0),
-            borderSide: new BorderSide(
-            ),
+            borderRadius: new BorderRadius.circular(50.0),
+            borderSide: new BorderSide(),
           ),
         ),
         textTheme: TextTheme(
