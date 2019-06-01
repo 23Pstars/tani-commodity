@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tani_commodity/src/utils/auth_util.dart';
+import 'package:tani_commodity/src/widgets/background_curve.dart';
 
 
 class RegisterScreen extends StatefulWidget {
@@ -21,6 +22,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
       // ),
       body: Stack(
       children: <Widget> [
+        BackgroundCurve(),
         Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[

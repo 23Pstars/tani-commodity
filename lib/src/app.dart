@@ -30,6 +30,8 @@ class _AppState extends State<App> {
             fontSize: 12,
             color: Color(0x80777777),
           ),
+          filled: true,
+          fillColor: Colors.white,
           border: new OutlineInputBorder(
             borderRadius: new BorderRadius.circular(50.0),
             borderSide: new BorderSide(),
@@ -46,7 +48,7 @@ class _AppState extends State<App> {
       ),
       initialRoute: '/',
       routes: <String, WidgetBuilder>{
-        '/': (context) => LoginScreen(),
+        '/': (context) => RegisterScreen(),
         '/register': (context) => RegisterScreen(),
         '/home': (context) => HomeScreen()
       },
