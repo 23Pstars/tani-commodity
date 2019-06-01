@@ -3,6 +3,7 @@ import 'package:tani_commodity/src/widgets/left_drawer.dart';
 import 'package:tani_commodity/src/widgets/app_bar.dart';
 import 'package:tani_commodity/src/screens/home/carousel_widget.dart';
 import 'package:tani_commodity/src/widgets/category.dart';
+import 'package:tani_commodity/src/widgets/village.dart';
 
 import 'package:firebase_database/firebase_database.dart';
 
@@ -13,6 +14,7 @@ class HomeScreen extends StatefulWidget{
 
 class _HomeScreenState extends State<HomeScreen> {
   List<List<String>> category;
+  List<List<String>> village;
 
   final dbReference = FirebaseDatabase.instance.reference();
 
@@ -23,6 +25,9 @@ class _HomeScreenState extends State<HomeScreen> {
       ['Olahan', 'https://web.pesansayur.id/asset/upload/icons_pilihan.png'],
       ['Kerajinan', 'https://web.pesansayur.id/asset/upload/icons_pilihan.png'],
       ['Jasa', 'https://web.pesansayur.id/asset/upload/icons_pilihan.png']
+    ];
+    village = [
+      ['Kekeri', 'https://upload.wikimedia.org/wikipedia/commons/9/90/Tassira.village.jpg'],
     ];
     super.initState();
 
@@ -40,9 +45,17 @@ class _HomeScreenState extends State<HomeScreen> {
       );
     }
 
+    List<Widget> villageList = List<Widget>();
+    for(List l in village){
+      villageList.add(
+        VillageCard(villageName: l[0], villageImage: l[1])
+      );
+    }
+
     return Scaffold(
       drawer: LeftDrawer(),
       body: Container(
+        color: Colors.white,
         child: CustomScrollView(
           slivers: <Widget>[
             TCAppBar(title: 'Homescreen',withBackground: false,),
@@ -55,11 +68,32 @@ class _HomeScreenState extends State<HomeScreen> {
             SliverToBoxAdapter(
               child: Padding(
                 padding: EdgeInsets.all(8.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: categoryList.toList(),
+                child: Card(
+                  elevation: 5,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15.0),
+                    side: BorderSide(
+                      color: Theme.of(context).primaryColor,
+                      width: 3.0
+                    )
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(8, 12, 8, 12),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: categoryList.toList(),
+                    ),
+                  ),
                 ),
               )
+            ),
+            SliverToBoxAdapter(
+              child: Padding(
+                padding: EdgeInsets.all(8.0),
+                child: Column(
+                  children: villageList.toList(),
+                )
+              ),
             )
 
           ],
