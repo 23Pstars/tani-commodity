@@ -22,6 +22,48 @@ class _CommodityScreenState extends State<CommodityScreen>{
     super.initState();
   }
 
+  popupDialog(){
+    return showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          content: Form(
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.all(Radius.circular(15))
+              ),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: <Widget>[
+                  Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: Text('Entry Price Suggestion', style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: TextField(
+
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: TextField(),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: RaisedButton(
+                      child: Text("Submit"),
+                      onPressed: () => print('submit price'),
+                    ),
+                  )
+                ],
+              ),
+            ),
+          ),
+        );
+      });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -70,7 +112,12 @@ class _CommodityScreenState extends State<CommodityScreen>{
                     bottom: 20,
                     right: 20,
                     child: SizedBox(
-                      child: Icon(Icons.add_comment, color: Colors.white, size: 32,),
+                      child: IconButton(
+                        onPressed: () => popupDialog(),
+                        icon: Icon(Icons.add_comment),
+                        color: Colors.white,
+                        iconSize: 32,
+                      ),
                     ),
                   )
                 ],
@@ -149,5 +196,4 @@ class ReviewWidget extends StatelessWidget{
     );
   }
 }
-
 
