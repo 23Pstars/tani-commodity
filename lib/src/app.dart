@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tani_commodity/src/screens/home/home_screen.dart';
-import 'package:tani_commodity/src/screens/login/login_screen.dart';
+import 'package:tani_commodity/src/screens/test_widget/test_widget_screen.dart';
 
 class App extends StatefulWidget {
   @override
@@ -19,7 +19,8 @@ class _AppState extends State<App> {
         accentColor: Color(0xffffc502),
         backgroundColor: Color(0xfff6f6f9),
         buttonTheme: ButtonThemeData(
-          shape: RoundedRectangleBorder(borderRadius:BorderRadius.circular(30.0)),
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
           buttonColor: Color(0xff086eba),
           textTheme: ButtonTextTheme.primary,
         ),
@@ -28,13 +29,21 @@ class _AppState extends State<App> {
             fontSize: 12,
             color: Color(0x80777777),
           ),
-          
         ),
+        textTheme: TextTheme(
+            body1: TextStyle(
+              fontSize: 12,
+            ),
+            subtitle: TextStyle(
+              fontSize: 12,
+              fontWeight: FontWeight.w700,
+            )),
       ),
       initialRoute: '/',
       routes: <String, WidgetBuilder>{
         '/': (context) => HomeScreen(),
-        '/home': (context) => HomeScreen()
+        '/home': (context) => HomeScreen(),
+        '/test_widget': (context) => TestWidgeScreen()
       },
     );
   }
