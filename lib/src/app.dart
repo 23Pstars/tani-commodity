@@ -19,6 +19,7 @@ class _AppState extends State<App> {
         accentColor: Color(0xffffc502),
         backgroundColor: Color(0xfff6f6f9),
         buttonTheme: ButtonThemeData(
+          shape: RoundedRectangleBorder(borderRadius:BorderRadius.circular(30.0)),
           buttonColor: Color(0xff086eba),
           textTheme: ButtonTextTheme.primary,
         ),
@@ -27,6 +28,7 @@ class _AppState extends State<App> {
             fontSize: 12,
             color: Color(0x80777777),
           ),
+          
         ),
       ),
       initialRoute: '/',
