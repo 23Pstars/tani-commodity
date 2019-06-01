@@ -33,7 +33,7 @@ class _AppState extends State<App> {
       ),
       initialRoute: '/',
       routes: <String, WidgetBuilder>{
-        '/': (context) => LoginScreen(),
+        '/': (context) => HomeScreen(),
         '/home': (context) => HomeScreen()
       },
     );

@@ -4,6 +4,8 @@ import 'package:tani_commodity/src/widgets/app_bar.dart';
 import 'package:tani_commodity/src/screens/home/carousel_widget.dart';
 import 'package:tani_commodity/src/widgets/category.dart';
 
+import 'package:firebase_database/firebase_database.dart';
+
 class HomeScreen extends StatefulWidget{
   @override
   _HomeScreenState createState() => _HomeScreenState();
@@ -11,6 +13,8 @@ class HomeScreen extends StatefulWidget{
 
 class _HomeScreenState extends State<HomeScreen> {
   List<List<String>> category;
+
+  final dbReference = FirebaseDatabase.instance.reference();
 
   @override
   void initState() {
@@ -21,6 +25,10 @@ class _HomeScreenState extends State<HomeScreen> {
       ['Jasa', 'https://web.pesansayur.id/asset/upload/icons_pilihan.png']
     ];
     super.initState();
+
+    dbReference.child("commodities/Nusa Tenggara Barat").once().then((DataSnapshot snapshot) {
+      print('Data : ${snapshot.value}');
+    });;
   }
 
   @override
