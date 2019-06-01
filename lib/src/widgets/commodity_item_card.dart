@@ -13,6 +13,7 @@ class CommodityItemCard extends StatelessWidget {
       width: 150,
       height: 250,
       child: Card(
+        elevation: 8.0,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.all(
             Radius.circular(_borderRadius),
@@ -69,6 +70,7 @@ class CommodityItemCard extends StatelessWidget {
                   child: SizedBox(
                     width: double.infinity,
                     child: RaisedButton(
+                      color: Theme.of(context).primaryColor,
                       child: Text("Review"),
                       onPressed: () {
                         onPressed != null && onPressed();
