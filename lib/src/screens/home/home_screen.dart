@@ -18,8 +18,6 @@ class _HomeScreenState extends State<HomeScreen> {
   List<List<String>> village;
   List<List<String>> commodity;
 
-  final dbReference = FirebaseDatabase.instance.reference();
-
   @override
   void initState() {
     category = [
@@ -40,13 +38,6 @@ class _HomeScreenState extends State<HomeScreen> {
       ['Garam'],
     ];
     super.initState();
-
-    dbReference
-        .child("commodities/Nusa Tenggara Barat")
-        .once()
-        .then((DataSnapshot snapshot) {
-      print('Data : ${snapshot.value}');
-    });
   }
 
   @override
