@@ -28,6 +28,7 @@ class _LoginScreenState extends State<LoginScreen> {
           FlutterLogo(
             size: 100.0,
           ),
+          Padding(padding: const EdgeInsets.only(top: 30.0)),
           Form(
                 key: _formKey,
                 child: Padding(

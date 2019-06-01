@@ -45,9 +45,10 @@ class _AppState extends State<App> {
               fontWeight: FontWeight.w700,
             )),
       ),
-      initialRoute: '/',
+      initialRoute: '/home',
       routes: <String, WidgetBuilder>{
-        '/': (context) => LoginScreen(),
+        '/login': (context) => LoginScreen(),
+        '/register': (context) => RegisterScreen(),
         '/home': (context) => HomeScreen()
       },
     );
