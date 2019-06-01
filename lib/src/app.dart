@@ -12,6 +12,7 @@ class _AppState extends State<App> {
   Widget build(BuildContext context) {
     return new MaterialApp(
       title: 'Tani Commodity',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         // Write all theme styles here
         primaryColor: Color(0xff086eba),
@@ -30,7 +31,7 @@ class _AppState extends State<App> {
       ),
       initialRoute: '/',
       routes: <String, WidgetBuilder>{
-        '/': (context) => LoginScreen(),
+        '/': (context) => HomeScreen(),
         '/home': (context) => HomeScreen()
       },
     );
